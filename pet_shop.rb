@@ -6,11 +6,30 @@ def total_cash(shop)
   return shop[:admin][:total_cash]
 end
 
-
+#this function works for both tests adding and removing cash
 def add_or_remove_cash(shop, amount)
   shop[:admin][:total_cash] += amount
 end
 
 def pets_sold(shop)
-  shop [:admin][:pets_sold]
+  shop[:admin][:pets_sold]
+end
+
+def increase_pets_sold(shop, number)
+  shop[:admin][:pets_sold] += number
+end
+
+def stock_count(shop)
+  shop[:pets].length
+end
+
+
+def pets_by_breed(shop, type)
+  pets = []
+  for pet in shop[:pets]
+    if pet[:breed] == type
+    pets.push(pet)
+    end
+  end
+  return pets
 end
