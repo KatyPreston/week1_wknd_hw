@@ -44,24 +44,20 @@ def find_pet_by_name(shop, name)
     return nil
 end
 
-# def find_pet_by_name(hash, name)
-#   for pets in hash[:pets]
-#     if (pets[:name] == name)
-#       return name
-#   end
-# end
-#   return nil
-# end
-
-#the next one too
-
-# and this one is maybe linked
 
 # def remove_pet_by_name(shop, name)
 #   for pet in shop[:pets]
-#     pet[:name].delete(name)
+#     if pet[:name] == name
+#       shop.delete(name)
+#     end
 #   end
+#   return pet
 # end
+
+def remove_pet_by_name(pets, name)
+  return pets[:pets].delete_if {|pets| name == name }
+end
+
 
 def add_pet_to_stock(shop, new_pet)
   shop[:pets].push(new_pet)
